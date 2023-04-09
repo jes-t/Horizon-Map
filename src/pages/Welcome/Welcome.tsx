@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Welcome.module.scss";
 
-export function Welcome() {
+export default function Welcome() {
   const navigate = useNavigate();
 
   const i18n = {

@@ -11,7 +11,7 @@ const maxBounds: [number, number][] = [
   [-300, 300],
 ];
 
-export function Map() {
+export default function Map() {
   const [markers, setMarkers] = useState([]);
 
   useEffect(() => {

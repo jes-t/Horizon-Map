@@ -1,18 +1,20 @@
+import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-// import "./App.scss";
 import "./index.scss";
-import { Map } from "./Components/Map/Map";
-import { Welcome } from "./Components/Welcome/Welcome";
+import { MapAsync } from "./pages/Map/Map.async";
+import { WelcomeAsync } from "./pages/Welcome/Welcome.async";
 
 function App() {
   return (
-    <div>
-      <Welcome />
-      <Routes>
-        <Route path="map" element={<Map />} />
-      </Routes>
-    </div>
+    <>
+      <Suspense fallback={<span>Loading...</span>}>
+        <Routes>
+          <Route path="/" element={<WelcomeAsync />} />
+          <Route path="/map" element={<MapAsync />} />
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 
