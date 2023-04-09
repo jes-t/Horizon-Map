@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { CRS } from "leaflet";
-import styled from "styled-components";
-import "../../App.css";
-import LocationFinder from "../../LocationFinder";
 import axios from "axios";
+
+import styles from "./Map.module.scss";
+import LocationFinder from "../../LocationFinder";
 
 const maxBounds: [number, number][] = [
   [50, -50],
@@ -16,42 +16,31 @@ export function Map() {
 
   useEffect(() => {
     axios.get("http://localhost:5050/markers").then(function (response) {
+      console.log("response.data.markers", response.data.markers);
+
       setMarkers(response.data.markers);
     });
   }, []);
 
   return (
-    <Root>
-      <StyledMap
+    <div className={styles.map}>
+      <MapContainer
         center={[-125.5, 130.7]}
         zoom={3}
         crs={CRS.Simple}
         maxBounds={maxBounds}
         maxZoom={5}
         minZoom={2}
+        className={styles.container}
       >
         <TileLayer url="http://localhost:5050/horizon_map/{z}/{x}/{y}.jpg" />
         <LocationFinder />
-        {markers.map(({ id, coords }) => (
-          <Marker key={id} position={coords} />
-        ))}
-      </StyledMap>
-    </Root>
+        {markers.map(({ id, coords }) => {
+          console.log("id, coords", id, coords);
+
+          return <Marker key={id} position={coords} />;
+        })}
+      </MapContainer>
+    </div>
   );
 }
-
-const Root = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-`;
-
-const StyledMap = styled(MapContainer)`
-  height: 100%;
-  width: 100%;
-
-  /* background-color: #000; */
-`;

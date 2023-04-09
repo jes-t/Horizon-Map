@@ -1,6 +1,6 @@
 import { useMapEvents } from "react-leaflet";
 
-function LocationFinder() {
+function LocationFinder(): any {
   useMapEvents({
     click(e) {
       console.log(e.latlng);
