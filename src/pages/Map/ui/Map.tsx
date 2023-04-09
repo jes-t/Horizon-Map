@@ -4,7 +4,7 @@ import { CRS } from "leaflet";
 import axios from "axios";
 
 import styles from "./Map.module.scss";
-import LocationFinder from "../../LocationFinder";
+import LocationFinder from "../../../LocationFinder";
 
 const maxBounds: [number, number][] = [
   [50, -50],

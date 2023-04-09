@@ -2,10 +2,10 @@ import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import "./styles/index.scss";
-import { MapAsync } from "./pages/Map/Map.async";
-import { WelcomeAsync } from "./pages/Welcome/Welcome.async";
-import { UseTheme } from "./theme/useTheme";
-import { classNames } from "./helpers/classNames/classNames";
+import { Welcome } from "pages/Welcome";
+import { Map } from "pages/Map";
+import { UseTheme } from "app/providers/ThemeProviders";
+import { classNames } from "shared/lib/classNames/classNames";
 
 function App() {
   const { theme, toggleTheme } = UseTheme();
@@ -15,8 +15,8 @@ function App() {
       <button onClick={toggleTheme}>Сменить тему</button>
       <Suspense fallback={<span>Loading...</span>}>
         <Routes>
-          <Route path="/" element={<WelcomeAsync />} />
-          <Route path="/map" element={<MapAsync />} />
+          <Route path="/" element={<Welcome />} />
+          <Route path="/map" element={<Map />} />
         </Routes>
       </Suspense>
     </div>

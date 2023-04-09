@@ -7,8 +7,10 @@
       "jsx": "react-jsx",
       "allowJs": true,
       "moduleResolution": "node",
-      // абсолютный пууть
       "baseUrl": ".",
+      "paths": {
+        "*": ["./src/*"]
+      },
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
     },
