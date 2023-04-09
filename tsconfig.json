@@ -10,7 +10,7 @@
       // абсолютный пууть
       "baseUrl": ".",
       "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true
+      "allowSyntheticDefaultImports": true,
     },
     "ts-node": {
         "compilerOptions": {

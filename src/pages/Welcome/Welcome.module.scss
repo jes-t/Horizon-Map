@@ -1,38 +1,33 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    background-color: paleturquoise;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 span {
-    display: block;
-    font-family:'Trattatello', 'fantasy';
-    font-style: normal;
-    font-size: 40px;
+  display: block;
 }
 
 button {
-    height: 40px;
-    width: 80px;
-    border-radius: 8px;
-    margin-top: 30px;
-    border: 2px solid black;
-    text-decoration: none;
-    cursor: pointer;
+  border-radius: 8px;
+  margin-top: 30px;
+  border: 2px solid black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .title {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
+  font-size: 40px;
 }
 
 .description {
-    display: flex;
-    width: 300px;
-    border: 1px dotted purple;
-    font-size: 20px;
-    text-decoration: underline;
+  display: flex;
+  width: 300px;
+  border: 1px dotted purple;
+  font-size: 20px;
+  text-decoration: underline;
 }
