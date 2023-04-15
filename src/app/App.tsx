@@ -11,15 +11,15 @@ function App() {
   const { theme, toggleTheme } = UseTheme();
 
   return (
-    <div className={classNames("app", {}, [theme])}>
-      <button onClick={toggleTheme}>Сменить тему</button>
-      <Suspense fallback={<span>Loading...</span>}>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/map" element={<Map />} />
-        </Routes>
-      </Suspense>
-    </div>
+    // <div className={classNames("app", {}, [theme])}>
+    //   <button onClick={toggleTheme}>Сменить тему</button>
+    <Suspense fallback={<span>Loading...</span>}>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/map" element={<Map />} />
+      </Routes>
+    </Suspense>
+    // </div>
   );
 }
 

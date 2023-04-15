@@ -6,9 +6,9 @@ export default function Welcome() {
 
   const i18n = {
     title: "Добро пожаловать в мир Horizon!!!",
-    description:
-      "Когда-нибудь здесь будет окошко авторизации, а пока кликай кнопку, чтобы увидеть карту",
     buttonTitle: "Клик",
+    email: "Email",
+    password: "Password",
   };
 
   const navigateToMap = () => navigate("/map");
@@ -16,7 +16,16 @@ export default function Welcome() {
   return (
     <div className={styles.wrapper}>
       <span className={styles.title}>{i18n.title}</span>
-      <span className={styles.description}>{i18n.description}</span>
+      <div className={styles.form}>
+        <span>{i18n.email}</span>
+        <input className={styles.inputLogin} placeholder={i18n.email} />
+        <span>{i18n.password}</span>
+        <input
+          className={styles.inputLogin}
+          placeholder={i18n.password}
+          type="password"
+        />
+      </div>
       <button onClick={navigateToMap}>{i18n.buttonTitle}</button>
     </div>
   );

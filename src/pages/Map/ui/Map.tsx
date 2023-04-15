@@ -5,6 +5,7 @@ import axios from "axios";
 
 import styles from "./Map.module.scss";
 import LocationFinder from "../../../LocationFinder";
+import { PanelMenu } from "feature/panel/ui/MenuPanel";
 
 const maxBounds: [number, number][] = [
   [50, -50],
@@ -13,6 +14,7 @@ const maxBounds: [number, number][] = [
 
 export default function Map() {
   const [markers, setMarkers] = useState([]);
+  const [isVisibleMarker, setIsVisibleMarker] = useState(true);
 
   useEffect(() => {
     axios.get("http://localhost:5050/markers").then(function (response) {
@@ -24,6 +26,11 @@ export default function Map() {
 
   return (
     <div className={styles.map}>
+      <PanelMenu
+        markers={markers}
+        setIsVisibleMarker={setIsVisibleMarker}
+        isVisibleMarker={isVisibleMarker}
+      />
       <MapContainer
         center={[-125.5, 130.7]}
         zoom={3}
@@ -34,12 +41,11 @@ export default function Map() {
         className={styles.container}
       >
         <TileLayer url="http://localhost:5050/horizon_map/{z}/{x}/{y}.jpg" />
-        <LocationFinder />
-        {markers.map(({ id, coords }) => {
-          console.log("id, coords", id, coords);
-
-          return <Marker key={id} position={coords} />;
-        })}
+        <LocationFinder markers={markers} setMarkers={setMarkers} />
+        {isVisibleMarker &&
+          markers.map(({ id, coords }) => {
+            return <Marker key={id} position={coords} />;
+          })}
       </MapContainer>
     </div>
   );
