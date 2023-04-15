@@ -6,6 +6,7 @@ import { Welcome } from "pages/Welcome";
 import { Map } from "pages/Map";
 import { UseTheme } from "app/providers/ThemeProviders";
 import { classNames } from "shared/lib/classNames/classNames";
+import { AppRouter } from "./providers/router";
 
 function App() {
   const { theme, toggleTheme } = UseTheme();
@@ -13,12 +14,7 @@ function App() {
   return (
     // <div className={classNames("app", {}, [theme])}>
     //   <button onClick={toggleTheme}>Сменить тему</button>
-    <Suspense fallback={<span>Loading...</span>}>
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/map" element={<Map />} />
-      </Routes>
-    </Suspense>
+    <AppRouter />
     // </div>
   );
 }
