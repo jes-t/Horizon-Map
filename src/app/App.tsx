@@ -1,19 +1,15 @@
-import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-
 import "./styles/index.scss";
-import { Welcome } from "pages/Welcome";
-import { Map } from "pages/Map";
-import { UseTheme } from "app/providers/ThemeProviders";
-import { classNames } from "shared/lib/classNames/classNames";
+// import { UseTheme } from "app/providers/ThemeProviders";
 import { AppRouter } from "./providers/router";
+// import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+// import { classNames } from "shared/lib/classNames/classNames";
 
 function App() {
-  const { theme, toggleTheme } = UseTheme();
+  // const { theme } = UseTheme();
 
   return (
     // <div className={classNames("app", {}, [theme])}>
-    //   <button onClick={toggleTheme}>Сменить тему</button>
+    //   <ThemeSwitcher />
     <AppRouter />
     // </div>
   );

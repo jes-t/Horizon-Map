@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Welcome.module.scss";
 
+import ProfileIcon from "shared/assets/icons/ProfileIcon.svg";
+
 export default function Welcome() {
   const navigate = useNavigate();
 
@@ -17,6 +19,7 @@ export default function Welcome() {
     <div className={styles.wrapper}>
       <span className={styles.title}>{i18n.title}</span>
       <div className={styles.form}>
+        <ProfileIcon />
         <span>{i18n.email}</span>
         <input className={styles.inputLogin} placeholder={i18n.email} />
         <span>{i18n.password}</span>
