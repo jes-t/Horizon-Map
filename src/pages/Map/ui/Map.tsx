@@ -6,6 +6,7 @@ import axios from "axios";
 import styles from "./Map.module.scss";
 import LocationFinder from "../../../LocationFinder";
 import { PanelMenu } from "feature/panel/ui/MenuPanel";
+import { SideBar } from "widgets/SideBar";
 
 const maxBounds: [number, number][] = [
   [50, -50],
@@ -26,11 +27,12 @@ export default function Map() {
 
   return (
     <div className={styles.map}>
-      <PanelMenu
+      {/* <PanelMenu
         markers={markers}
         setIsVisibleMarker={setIsVisibleMarker}
         isVisibleMarker={isVisibleMarker}
-      />
+      /> */}
+      <SideBar />
       <MapContainer
         center={[-125.5, 130.7]}
         zoom={3}
