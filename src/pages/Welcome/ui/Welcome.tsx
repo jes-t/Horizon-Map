@@ -2,15 +2,18 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Welcome.module.scss";
 
 import ProfileIcon from "shared/assets/icons/ProfileIcon.svg";
+import { useTranslation } from "react-i18next";
+import LangSwitcher from "widgets/LangSwitcher/LangSwitcher";
 
 export default function Welcome() {
   const navigate = useNavigate();
+  const { t } = useTranslation("auth");
 
   const i18n = {
-    title: "Добро пожаловать в мир Horizon!!!",
-    buttonTitle: "Клик",
-    email: "Email",
-    password: "Password",
+    title: t("title"),
+    buttonTitle: t("button_title"),
+    email: t("email"),
+    password: t("password"),
   };
 
   const navigateToMap = () => navigate("/map");
@@ -30,6 +33,7 @@ export default function Welcome() {
         />
       </div>
       <button onClick={navigateToMap}>{i18n.buttonTitle}</button>
+      <LangSwitcher className={styles.lang} />
     </div>
   );
 }

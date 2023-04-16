@@ -1,8 +1,10 @@
+import { Suspense } from "react";
+
 import "./styles/index.scss";
-// import { UseTheme } from "app/providers/ThemeProviders";
+import { UseTheme } from "app/providers/ThemeProviders";
 import { AppRouter } from "./providers/router";
-// import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-// import { classNames } from "shared/lib/classNames/classNames";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { classNames } from "shared/lib/classNames/classNames";
 
 function App() {
   // const { theme } = UseTheme();
@@ -10,8 +12,10 @@ function App() {
   return (
     // <div className={classNames("app", {}, [theme])}>
     //   <ThemeSwitcher />
-    <AppRouter />
-    // </div>
+    <Suspense fallback="">
+      <AppRouter />
+    </Suspense>
+    // {/* </div> */}
   );
 }
 
