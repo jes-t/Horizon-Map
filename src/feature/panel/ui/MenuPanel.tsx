@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styles from "./MenuPanel.module.scss";
+import { useState } from 'react';
+import styles from './MenuPanel.module.scss';
 
 interface PanelMenuProps {
   markers: any;
@@ -8,18 +8,18 @@ interface PanelMenuProps {
 }
 
 export function PanelMenu({
-  markers,
-  setIsVisibleMarker,
-  isVisibleMarker,
+    markers,
+    setIsVisibleMarker,
+    isVisibleMarker,
 }: PanelMenuProps) {
-  const [isVisibleSideBar, setIsVisibleSideBar] = useState(true);
-  console.log(markers);
+    const [isVisibleSideBar, setIsVisibleSideBar] = useState(true);
+    console.log(markers);
 
-  const count = markers.length;
+    const count = markers.length;
 
-  return (
-    <>
-      {/* <div
+    return (
+        <>
+            {/* <div
         onClick={() => {
           setIsVisibleSideBar(!isVisibleSideBar);
         }}
@@ -27,25 +27,26 @@ export function PanelMenu({
       >
         {"<"}
       </div> */}
-      <div className={styles.sidebar}>
-        {isVisibleSideBar && (
-          <div className={styles.panel}>
-            <h2>Horizon Zero Dawn Interactive Map</h2>
-            <div className={styles.wrapper}>
-              <span>Categories</span>
-              <ul className={styles.categories}>
-                <div className={styles.group}>Location</div>
-                <div
-                  className={styles.subcategories}
-                  onClick={() => setIsVisibleMarker(!isVisibleMarker)}
-                >
-                  Campfire - {count}{" "}
-                </div>
-              </ul>
+            <div className={styles.sidebar}>
+                {isVisibleSideBar && (
+                    <div className={styles.panel}>
+                        <h2>Horizon Zero Dawn Interactive Map</h2>
+                        <div className={styles.wrapper}>
+                            <span>Categories</span>
+                            <ul className={styles.categories}>
+                                <div className={styles.group}>Location</div>
+                                <div
+                                    className={styles.subcategories}
+                                    onClick={() => setIsVisibleMarker(!isVisibleMarker)}
+                                >
+                                    Campfire -
+                                    {count}
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                )}
             </div>
-          </div>
-        )}
-      </div>
-    </>
-  );
+        </>
+    );
 }

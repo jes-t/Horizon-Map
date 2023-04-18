@@ -1,1 +1,1 @@
-export { MapAsync as Map } from "./ui/Map.async";
+export { MapAsync as Map } from './ui/Map.async';
