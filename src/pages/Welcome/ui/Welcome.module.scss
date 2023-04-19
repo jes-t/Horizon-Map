@@ -1,62 +1,64 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  background-color: aquamarine;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    height: 100vh;
 }
 
 span {
-  display: block;
-  font-family: "Trattatello", "Times New Roman", "fantasy";
+    display: block;
+    font-family: Trattatello, "Times New Roman", fantasy;
 }
 
 button {
-  border-radius: 8px;
-  margin-top: 30px;
-  padding: 10px;
-  border: 2px solid black;
-  text-decoration: none;
-  cursor: pointer;
+    border-radius: 8px;
+    margin-top: 30px;
+    padding: 10px;
+    border: 2px solid black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .title {
-  padding-bottom: 40px;
-  font-size: 40px;
+    padding-bottom: 40px;
+    font-size: 40px;
 }
 
 .description {
-  display: flex;
-  width: 300px;
-  border: 1px dotted purple;
-  font-size: 20px;
-  text-decoration: underline;
+    display: flex;
+    width: 300px;
+    border: 1px dotted purple;
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px;
-  background-color: aliceblue;
-  border: 1px solid rgb(45, 45, 212);
-  border-radius: 6px;
-  span {
-    color: red;
-    font-family: cursive;
-  }
-  .inputLogin {
-    height: 40px;
-    font-family: cursive;
-    border-radius: 4px;
-    padding: 8px;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: aliceblue;
+    border: 1px solid rgb(45 45 212);
+    border-radius: 6px;
+
+    span {
+        color: red;
+        font-family: cursive;
+    }
+
+    .inputLogin {
+        height: 40px;
+        font-family: cursive;
+        border-radius: 4px;
+        padding: 8px;
+    }
 }
 
 .lang {
-  position: absolute;
-  right: 30px;
-  top: 0;
+    position: absolute;
+    right: 30px;
+    top: 0;
 }

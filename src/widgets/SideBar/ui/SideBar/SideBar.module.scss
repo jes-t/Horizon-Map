@@ -1,10 +1,11 @@
 .SideBar {
-  position: relative;
-  height: 100%;
-  width: var(--sidebar-width);
-  background-color: azure;
-  transition: width 0.3s;
+    position: relative;
+    height: 100%;
+    width: var(--sidebar-width);
+    background-color: azure;
+    transition: width 0.3s;
 }
+
 .collapsed {
-  width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 }
