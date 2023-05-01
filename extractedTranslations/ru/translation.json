@@ -1,7 +1,9 @@
 {
   "button_title": "button_title",
   "email": "email",
+  "home": "home",
   "lang": "lang",
+  "not_found": "not_found",
   "password": "password",
   "title": "title"
 }

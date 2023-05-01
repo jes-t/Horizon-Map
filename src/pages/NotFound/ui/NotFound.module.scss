@@ -1,0 +1,14 @@
+.NotFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font: var(--font-l);
+    height: 100%;
+    background-color: aquamarine;
+}
+
+.Title {
+    margin-top: 30px;
+    font-size: 20px;
+}

@@ -32,7 +32,12 @@ export default function Welcome() {
                     type="password"
                 />
             </div>
-            <button type="button" onClick={navigateToMap}>{i18n.buttonTitle}</button>
+            <button
+                type="button"
+                onClick={navigateToMap}
+            >
+                {i18n.buttonTitle}
+            </button>
             <LangSwitcher className={styles.lang} />
         </div>
     );
