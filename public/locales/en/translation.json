@@ -1,5 +1,9 @@
 {
   "lang": "English",
   "not_found": "Page Not Found",
-  "home": "Back to Home"
+  "home": "Back to Home",
+  "error_page": {
+    "title": "Unexpected Error",
+    "title_button": "Reload the page"
+  }
 }

@@ -3,13 +3,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 import 'app/styles/reset.scss';
 import { ThemeProvider } from 'app/providers/ThemeProviders';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import App from './app/App';
 import 'shared/config/i18n/i18n';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
-        <ThemeProvider>
-            <App />
-        </ThemeProvider>
+        <ErrorBoundary>
+            <ThemeProvider>
+                <App />
+            </ThemeProvider>
+        </ErrorBoundary>
     </BrowserRouter>,
 );

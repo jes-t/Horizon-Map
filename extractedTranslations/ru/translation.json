@@ -1,6 +1,10 @@
 {
   "button_title": "button_title",
   "email": "email",
+  "error_page": {
+    "title": "title",
+    "title_button": "title_button"
+  },
   "home": "home",
   "lang": "lang",
   "not_found": "not_found",
