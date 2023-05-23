@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useNavigate } from 'react-router';
+import { Button } from 'shared/ui/Button/Button';
 import styles from './NotFound.module.scss';
 
 interface NotFoundProps {
@@ -21,13 +22,11 @@ export function NotFound({ className }: NotFoundProps) {
     return (
         <div className={classNames(styles.NotFound, {}, [className])}>
             {i18n.title}
-            <button
+            <Button
                 className={styles.Title}
-                type="button"
                 onClick={navigateToAuth}
-            >
-                {i18n.buttonTitle}
-            </button>
+                title={i18n.buttonTitle}
+            />
         </div>
     );
 }

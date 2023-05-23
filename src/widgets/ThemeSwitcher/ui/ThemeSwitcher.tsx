@@ -1,5 +1,5 @@
 import { UseTheme } from 'app/providers/ThemeProviders';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -9,13 +9,11 @@ function ThemeSwitcher({ className }: ThemeSwitcherProps) {
     const { theme, toggleTheme } = UseTheme();
 
     return (
-        <button
-            type="button"
+        <Button
             onClick={toggleTheme}
-            className={classNames('', {}, [className])}
-        >
-            Сменить тему
-        </button>
+            className={className}
+            title="Сменить тему"
+        />
     );
 }
 

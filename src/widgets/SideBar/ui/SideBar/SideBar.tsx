@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
 import styles from './SideBar.module.scss';
 
 interface SideBarProps {
@@ -7,19 +9,25 @@ interface SideBarProps {
 }
 
 export function SideBar({ className }:SideBarProps) {
+    const { t } = useTranslation();
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
     const onToggle = () => {
         setIsCollapsed((prev) => !prev);
     };
     return (
         <div
+            data-testid="sidebar"
             className={classNames(
                 styles.SideBar,
                 { [styles.collapsed]: isCollapsed },
                 [className],
             )}
         >
-            <button type="button" onClick={onToggle}>toggle</button>
+            <Button
+                data-testid="sidebarToggle"
+                onClick={onToggle}
+                title={t('toggle')}
+            />
         </div>
     );
 }

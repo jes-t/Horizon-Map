@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ProfileIcon from 'shared/assets/icons/ProfileIcon.svg';
 import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
+import { Button } from 'shared/ui/Button/Button';
 import styles from './Welcome.module.scss';
 
 export default function Welcome() {
@@ -32,12 +33,7 @@ export default function Welcome() {
                     type="password"
                 />
             </div>
-            <button
-                type="button"
-                onClick={navigateToMap}
-            >
-                {i18n.buttonTitle}
-            </button>
+            <Button onClick={navigateToMap} title={i18n.buttonTitle} />
             <LangSwitcher className={styles.lang} />
         </div>
     );
