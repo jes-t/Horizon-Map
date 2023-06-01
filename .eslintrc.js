@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -22,13 +23,13 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [
-            2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
-        ],
+        'react/jsx-filename-extension': [2, {
+            extensions: ['.js', '.jsx', '.tsx'],
+        }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        // 'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['warn'],
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -40,18 +41,21 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/interactive-supports-focus': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
-        'max-len': ['error', { ignoreComments: true }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+        }],
+        'max-len': ['error', {
+            ignoreComments: true,
+            code: 100,
+        }],
     },
     globals: {
         __IS_DEV__: true,
     },
-    overrides: [
-        {
-            files: ['**/src/**/*.test.{ts,tsx}'],
-            rules: {
-                'i18next/no-literal-string': 'off',
-            },
+    overrides: [{
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
         },
-    ],
+    }],
 };

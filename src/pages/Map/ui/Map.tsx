@@ -42,10 +42,12 @@ export default function Map() {
                 minZoom={2}
                 className={styles.container}
             >
-                <TileLayer url="http://localhost:5050/horizon_map/{z}/{x}/{y}.jpg" />
+                <TileLayer
+                    url="http://localhost:5050/horizon_map/{z}/{x}/{y}.jpg"
+                />
                 <LocationFinder markers={markers} setMarkers={setMarkers} />
                 {isVisibleMarker
-          && markers.map(({ id, coords }) => <Marker key={id} position={coords} />)}
+                 && markers.map(({ id, coords }) => <Marker key={id} position={coords} />)}
             </MapContainer>
         </div>
     );

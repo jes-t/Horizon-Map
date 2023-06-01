@@ -3,7 +3,7 @@ import i18n from 'shared/config/i18n/i18n';
 import { Button } from 'shared/ui/Button/Button';
 
 interface LangSwitcherProps {
-  className: string;
+  className?: string;
 }
 
 export function LangSwitcher({ className }:LangSwitcherProps) {
