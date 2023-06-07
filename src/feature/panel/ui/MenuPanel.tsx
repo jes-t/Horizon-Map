@@ -13,6 +13,7 @@ export function PanelMenu({
     setIsVisibleMarker,
     isVisibleMarker,
 }: PanelMenuProps) {
+    // eslint-disable-next-line no-unused-vars
     const [isVisibleSideBar, setIsVisibleSideBar] = useState(true);
     console.log(markers);
 

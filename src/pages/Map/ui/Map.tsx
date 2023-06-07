@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import { CRS } from 'leaflet';
 import axios from 'axios';
 
-import { PanelMenu } from 'feature/panel/ui/MenuPanel';
+// import { PanelMenu } from 'feature/panel/ui/MenuPanel';
 import { SideBar } from 'widgets/SideBar';
 import styles from './Map.module.scss';
 import LocationFinder from '../../../LocationFinder';
@@ -15,6 +15,7 @@ const maxBounds: [number, number][] = [
 
 export default function Map() {
     const [markers, setMarkers] = useState([]);
+    // eslint-disable-next-line no-unused-vars
     const [isVisibleMarker, setIsVisibleMarker] = useState(true);
 
     useEffect(() => {

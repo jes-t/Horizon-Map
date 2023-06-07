@@ -6,7 +6,7 @@ interface ThemeSwitcherProps {
 }
 
 function ThemeSwitcher({ className }: ThemeSwitcherProps) {
-    const { theme, toggleTheme } = UseTheme();
+    const { toggleTheme } = UseTheme();
 
     return (
         <Button

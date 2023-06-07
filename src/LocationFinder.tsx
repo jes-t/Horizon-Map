@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useMapEvents } from 'react-leaflet';
-import axios from 'axios';
+// import axios from 'axios';
 
 function LocationFinder({ setMarkers, markers }: any): any {
     useMapEvents({
