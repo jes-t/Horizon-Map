@@ -4,6 +4,8 @@ import ProfileIcon from 'shared/assets/icons/ProfileIcon.svg';
 import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
 import { Button } from 'shared/ui/Button/Button';
+import { Modal } from 'shared/ui/Modal/Modal';
+import { useCallback, useState } from 'react';
 import styles from './Welcome.module.scss';
 
 export default function Welcome() {
@@ -17,11 +19,37 @@ export default function Welcome() {
         password: t('password'),
     };
 
+    const [isAuthModal, setIsAuthModal] = useState(false);
+
     const navigateToMap = () => navigate('/map');
+
+    const onToggleModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev);
+    }, []);
 
     return (
         <div className={styles.wrapper}>
+
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+
+                <div className={styles.form}>
+                    <ProfileIcon />
+                    <span>{i18n.email}</span>
+                    <input className={styles.inputLogin} placeholder={i18n.email} />
+                    <span>{i18n.password}</span>
+                    <input
+                        className={styles.inputLogin}
+                        placeholder={i18n.password}
+                        type="password"
+                    />
+
+                    <Button onClick={navigateToMap} title={i18n.buttonTitle} />
+                </div>
+
+            </Modal>
+
             <span className={styles.title}>{i18n.title}</span>
+
             <div className={styles.form}>
                 <ProfileIcon />
                 <span>{i18n.email}</span>
@@ -33,7 +61,8 @@ export default function Welcome() {
                     type="password"
                 />
             </div>
-            <Button onClick={navigateToMap} title={i18n.buttonTitle} />
+
+            <Button onClick={onToggleModal} title={i18n.buttonTitle} />
             <LangSwitcher className={styles.lang} />
         </div>
     );

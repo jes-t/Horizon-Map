@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import { AppRouter } from './providers/router';
 
-import './styles/index.scss';
 // import { UseTheme } from 'app/providers/ThemeProviders';
 // import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 // import { classNames } from 'shared/lib/classNames/classNames';
